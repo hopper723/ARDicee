@@ -84,12 +84,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     func roll(dice: SCNNode) {
         let randomX = Float(arc4random_uniform(4)+1)*(Float.pi/2)
+        let randomY = Float(arc4random_uniform(4)+1)*(Float.pi/2)
         let randomZ = Float(arc4random_uniform(4)+1)*(Float.pi/2)
         
         dice.runAction(SCNAction.rotateBy(
-            x: CGFloat(randomX*10),
-            y: 0,
-            z: CGFloat(randomZ*10),
+            x: CGFloat(randomX*5),
+            y: CGFloat(randomY*5),
+            z: CGFloat(randomZ*5),
             duration: 0.5)
         )
     }
